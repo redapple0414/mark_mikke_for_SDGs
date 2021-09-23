@@ -463,7 +463,7 @@ MonoBehaviour:
   rosunonimage: {fileID: 21300000, guid: f5a042b159eda421c9fc76198c4e954e, type: 3}
   foodforspecifiedhealthusesmarkimage: {fileID: 21300000, guid: 4200d5430d2594c4ca1131f0c3c07f20,
     type: 3}
-  MUDmarkimage: {fileID: 21300000, guid: b28d2e24c9bc140dc8c26cba1c77699d, type: 3}
+  MUDmarkimage: {fileID: 21300000, guid: 59bd136a876334c0abeeb9555dc76d33, type: 3}
   rainbowflagimage: {fileID: 21300000, guid: 3d5842fb7dcec400f9a57541c919192d, type: 3}
   drinkingwatermarkimage: {fileID: 21300000, guid: 2944b9724beab41e29b53468349084ec,
     type: 3}

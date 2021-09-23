@@ -809,7 +809,7 @@ public class WebCamController : MonoBehaviour
                     {
                     
                    sp = speakBellmark;
-                    this.Getmarkimage.GetComponent<Image>().sprite = Bellmarkimage;
+                    this.Getmarkimage.GetComponent<Image>().sprite = MUDmarkimage;
                     getok = 1;
      
 
@@ -1006,7 +1006,7 @@ public class WebCamController : MonoBehaviour
                 audioSource.Play ();
                 Invoke("Getmark",0.1f);
                 Invoke("Resettalking",7);
-                                  if (Chatterscript.selectmarkname == "hane" || Chatterscript.selectmarkname == "Redcup" || Chatterscript.selectmarkname == "AEDmark" ||Chatterscript.selectmarkname == "Bellmark" || Chatterscript.selectmarkname == "Maternitymark" || Chatterscript.selectmarkname == "Toiletmark" || Chatterscript.selectmarkname == "GreenEnergymark" || Chatterscript.selectmarkname == "Kuruminmark" || Chatterscript.selectmarkname == "JISmark" || Chatterscript.selectmarkname == "Helpmark" || Chatterscript.selectmarkname == "Evacuationsitemark" || Chatterscript.selectmarkname == "Recyclesymbol" || Chatterscript.selectmarkname == "ecomark" || Chatterscript.selectmarkname == "Ecolabelofthesea" || Chatterscript.selectmarkname == "FSCmark" || Chatterscript.selectmarkname == "Orangeribbon" ||Chatterscript.selectmarkname == "SDGsmark")
+                                  if (Chatterscript.selectmarkname == "hane" || Chatterscript.selectmarkname == "Redcup" || Chatterscript.selectmarkname == "AEDmark" ||Chatterscript.selectmarkname == "Bellmark" || Chatterscript.selectmarkname == "Maternitymark" || Chatterscript.selectmarkname == "Toiletmark" || Chatterscript.selectmarkname == "GreenEnergymark" || Chatterscript.selectmarkname == "Kuruminmark" || Chatterscript.selectmarkname == "JISmark" || Chatterscript.selectmarkname == "Helpmark" || Chatterscript.selectmarkname == "Evacuationsitemark" || Chatterscript.selectmarkname == "Recyclesymbol" || Chatterscript.selectmarkname == "ecomark" || Chatterscript.selectmarkname == "Ecolabelofthesea" || Chatterscript.selectmarkname == "FSCmark" || Chatterscript.selectmarkname == "Orangeribbon" ||Chatterscript.selectmarkname == "SDGsmark" ||Chatterscript.selectmarkname == "MUDmark")
                                  {  
         
                                       Getmarkimage.transform.localScale= new Vector3(0.75f,0.75f,1);

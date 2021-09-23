@@ -177,7 +177,7 @@ public class hukidasi : MonoBehaviour
         //this.hukidasiObject.SetActive(true);
  
         this.Childimage.GetComponent<Image>().sprite = earthkun;
-        this.Childimage.transform.localScale = new Vector3(1.5f, 1.5f, 1);
+        this.Childimage.transform.localScale = new Vector3(1.5f, 1.5f, 0.5f);
 
         //this.hukidasiObject = GameObject.Find("hukidasi");
         Invoke("Help", 7);
@@ -197,10 +197,10 @@ public class hukidasi : MonoBehaviour
         hukidasiimage.transform.DOScale(new Vector3(0f, 0f, 0f), 0f);
         Childimage.transform.DOLocalMove(new Vector3(0, 300, 0), 0f);
         Childimage.transform.DOScale(new Vector3(0.5f, 0.5f, 0.5f), 0f);
-        Childimage.transform.DOLocalMove(new Vector3(-715, -400, 0), 1f);
-        Childimage.transform.DOScale(new Vector3(1.65f, 1.65f, 1), 1f);
-        hukidasiimage.transform.DOScale(new Vector3(2f, 4f, 1f), 1f)
-                               .SetDelay(1f);
+        Childimage.transform.DOLocalMove(new Vector3(-715, -400, 0), 0.5f);
+        Childimage.transform.DOScale(new Vector3(1.65f, 1.65f, 1), 0.5f);
+        hukidasiimage.transform.DOScale(new Vector3(2f, 4f, 1f), 0.5f)
+                               .SetDelay(0.5f);
         this.hukidasiimage.SetActive(true);
         //this.hukidasiText.SetActive(true);
         this.namaeimage.SetActive(true);
