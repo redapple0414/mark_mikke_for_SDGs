@@ -12,7 +12,7 @@ public class click : MonoBehaviour
     void Start()
     { 
         this.gameObject.SetActive(false);
-        Invoke("Set", 4f);
+        Invoke("Set", 5f);
         this.transform.DOLocalMove(new Vector3(169, -121, 0), 1f).SetDelay(6f).SetLoops(3,LoopType.Restart).SetEase(Ease.Linear);
          Invoke("DelayMethod", 7.75f);
         
