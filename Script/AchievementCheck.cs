@@ -33,7 +33,7 @@ public class AchievementCheck : MonoBehaviour
         for (int i = 0; i < Chatterscripts.Length; i++)
         {
            
-            if (Chatterscripts[i].Achievement != 1)
+            if (Chatterscripts[i].Achievement != 1 && Chatterscripts[i].Achievement2 != 1)
             {
                 PlayerPrefs.SetInt ("Clear", 0);
              
@@ -81,7 +81,7 @@ public class AchievementCheck : MonoBehaviour
             Debug.Log("Achievement = 1");
             for (int i = 0; i < Chatterscripts.Length; i++)
             {
-                PlayerPrefs.SetInt ("Clear", 1);
+               PlayerPrefs.SetInt ("Clear", 1);
                PlayerPrefs.SetInt(Chatterscripts[i].markName,1);
             }
         }
