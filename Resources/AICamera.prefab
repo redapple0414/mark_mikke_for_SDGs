@@ -433,9 +433,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   markName: bellmark
   feed: {fileID: 2734313981223820688}
-  modelAsset: {fileID: 5022602860645237092, guid: 30541e1ccac5442668e1f7db4bbf4976,
+  modelAsset: {fileID: 5022602860645237092, guid: 4fbed0d9cc30f4a09b184c418130f693,
     type: 3}
-  modelAsset2: {fileID: 5022602860645237092, guid: 607967ae035e04c62b125d631bb33a95,
+  modelAsset2: {fileID: 5022602860645237092, guid: 6567c1bc4b6934c88a0c0f597fc270ec,
+    type: 3}
+  modelAsset3: {fileID: 5022602860645237092, guid: d94ed35d90ee7471c8164e4fabec3492,
     type: 3}
   maxScoretext: {fileID: 0}
   maxScoremarktext: {fileID: 0}

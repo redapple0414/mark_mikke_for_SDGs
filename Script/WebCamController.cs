@@ -34,8 +34,10 @@ public class WebCamController : MonoBehaviour
     // MobileNetモデル関連
     public NNModel modelAsset;
     public NNModel modelAsset2;
+    public NNModel modelAsset3;
     private MobileNet mobileNet;
     private MobileNet mobileNet2;
+    private MobileNet mobileNet3;
     
 
     Texture2D texture1;
@@ -146,6 +148,7 @@ public class WebCamController : MonoBehaviour
 
         mobileNet = new MobileNet(modelAsset);
         mobileNet2 = new MobileNet(modelAsset2);
+        mobileNet3 = new MobileNet(modelAsset3);
   
         this.Explanationimage = GameObject.Find("Explanation");
 
@@ -282,9 +285,13 @@ public class WebCamController : MonoBehaviour
         // 推論
         float[] scores;
 
-        if(markName == "hane" || markName == "Redcup" || markName == "AEDmark" || markName == "Bellmark" || markName == "Maternitymark" || markName == "Toiletmark" || markName == "GreenEnergymark" || markName == "Kuruminmark" || markName == "JISmark" || markName == "Helpmark" || markName == "Evacuationsitemark" || markName == "Recyclesymbol" || markName == "ecomark" || markName == "Ecolabelofthesea" || markName == "FSCmark" || markName == "Orangeribbon" || markName == "SDGsmark")
+         if(markName == "hane" || markName == "Redcup" || markName == "AEDmark" || markName == "Maternitymark" || markName == "Toiletmark" || markName == "GreenEnergymark" || markName == "Kuruminmark" || markName == "JISmark" || markName == "Helpmark" || markName == "Evacuationsitemark" || markName == "Ecolabelofthesea" || markName == "FSCmark" || markName == "Orangeribbon" || markName == "SDGsmark")
         {
             scores = mobileNet.Inference(texture1);
+        }
+        else if(markName == "yunisehu" ||markName == "Bellmark" ||markName == "foodforspecifiedhealthusesmark" ||markName == "ecomark")
+        {
+            scores = mobileNet3.Inference(texture1);
         }
        else
         {
@@ -305,7 +312,7 @@ public class WebCamController : MonoBehaviour
             }
         }
 
-               if(markName == "hane" || markName == "Redcup" || markName == "AEDmark" || markName == "Bellmark" || markName == "Maternitymark" || markName == "Toiletmark" || markName == "GreenEnergymark" || markName == "Kuruminmark" || markName == "JISmark" || markName == "Helpmark" || markName == "Evacuationsitemark" || markName == "Recyclesymbol" || markName == "ecomark" || markName == "Ecolabelofthesea" || markName == "FSCmark" || markName == "Orangeribbon" || markName == "SDGsmark")
+               if(markName == "hane" || markName == "Redcup" || markName == "AEDmark" || markName == "Maternitymark" || markName == "Toiletmark" || markName == "GreenEnergymark" || markName == "Kuruminmark" || markName == "JISmark" || markName == "Helpmark" || markName == "Evacuationsitemark" || markName == "Ecolabelofthesea" || markName == "FSCmark" || markName == "Orangeribbon" || markName == "SDGsmark")
         {
                  //      Debug.Log(mobileNet.getClassName(classId));
 　　　　　　  　resultText = "mark:" + mobileNet.getClassName(classId) + "\n";
@@ -313,12 +320,17 @@ public class WebCamController : MonoBehaviour
            
     
         }
-       else
+       else if(markName == "yunisehu" ||markName == "Bellmark" ||markName == "foodforspecifiedhealthusesmark" ||markName == "Recyclesymbol" ||markName == "greenmark" ||markName == "ecomark")
         {
              
-　　　　　　 　resultText = "mark:" + mobileNet.getClassName2(classId) + "\n";
+　　　　　　 　resultText = "mark:" + mobileNet.getClassName3(classId) + "\n";
 　　　　　 　　resultText = resultText + "Score:" + maxScore.ToString("F3") + "\n";
 
+        }
+        else
+        {
+            　resultText = "mark:" + mobileNet.getClassName2(classId) + "\n";
+　　　　　 　　resultText = resultText + "Score:" + maxScore.ToString("F3") + "\n";
         }
         
              //    Debug.Log(maxScore);
@@ -340,12 +352,12 @@ public class WebCamController : MonoBehaviour
             //if (mobileNet.getClassName(classId) == markName)
 
                 
-            if (mobileNet.getClassName(classId) == markName || mobileNet.getClassName2(classId) == markName)
+            if (mobileNet.getClassName(classId) == markName || mobileNet.getClassName2(classId) == markName || mobileNet.getClassName3(classId) == markName)
             {
                 getok = 3;
                 resultText = resultText + "ok:" + getok.ToString("F3") + "\n";
 
-                 if (markName == "Recyclesymbol"  && maxScore > 0.95f*sri.ninsiki)
+                 if (markName == "Recyclesymbol"  && maxScore > 0.9f*sri.ninsiki)
                 {
                     
                       sp = speakRecyclesymbol;
@@ -415,7 +427,7 @@ public class WebCamController : MonoBehaviour
                     getok = 1;
                      }
                 
-                     if (markName == "JASmark" && maxScore > 0.9f*sri.ninsiki )
+                     if (markName == "JASmark" && maxScore > 0.8f*sri.ninsiki )
                 // {
                 //      if (
                 //     (  mobileNet.getClassName(classId) ==  "JASmark"
@@ -574,7 +586,7 @@ public class WebCamController : MonoBehaviour
                 if (markName == "Bellmark")
                 {
                   
-                    if(maxScore > 0.6f*sri.ninsiki)
+                    if(maxScore > 0.9f*sri.ninsiki)
                     {
                      
                    sp = speakBellmark;
@@ -647,7 +659,7 @@ public class WebCamController : MonoBehaviour
                 if (markName == "JISmark")
                 {
                    
-                    if(maxScore > 0.8f*sri.ninsiki)
+                    if(maxScore > 0.7f*sri.ninsiki)
                     {
                     
                     sp = speakJISmark;
@@ -767,7 +779,7 @@ public class WebCamController : MonoBehaviour
                 if (markName == "yunisehu")
                 {
                     
-                    if(maxScore > 0.95f*sri.ninsiki)
+                    if(maxScore > 0.5f*sri.ninsiki)
                     {
                       
                  sp = speakhane;
@@ -792,7 +804,7 @@ public class WebCamController : MonoBehaviour
                 if (markName == "foodforspecifiedhealthusesmark")
                 {
                 
-                    if(maxScore > 0.6f*sri.ninsiki)
+                    if(maxScore > 0.5f*sri.ninsiki)
                     {
                      
                     sp = speakAEDmark;
@@ -948,7 +960,7 @@ public class WebCamController : MonoBehaviour
                 if (markName == "greenmark")
                 {
                 
-                    if(maxScore > 0.5f*sri.ninsiki)
+                    if(maxScore > 0.2f*sri.ninsiki)
                     {
                  
                     sp = speakFSCmark;

@@ -100,6 +100,14 @@ public class MobileNet: MonoBehaviour
         }
         return className2[classId];
     }
+     public string getClassName3(int classId)
+    {
+        if (classId < 0 || className.Length <= classId)
+        {
+            return "";
+        }
+        return className3[classId];
+    }
 
  
     string[] className = {
@@ -107,7 +115,7 @@ public class MobileNet: MonoBehaviour
 "hane",
 "Redcup",
 "AEDmark",
-"Bellmark",
+"Bellmark2",
 "Maternitymark",
 "Toiletmark",
 "GreenEnergymark",
@@ -116,32 +124,32 @@ public class MobileNet: MonoBehaviour
 "Helpmark",
 "Evacuationsitemark",
 "Recyclesymbol",
-"ecomark",
+"ecomark2",
 "Ecolabelofthesea",
 "FSCmark",
 "Orangeribbon",
 "SDGsmark",
 "none",
 "none2",
-"Recyclesymbol",
-"Recyclesymbol",
-"Recyclesymbol",
-"Recyclesymbol",
-"Recyclesymbol",
-"Recyclesymbol",
-"Recyclesymbol",
+"Recyclesymbol2",
+"Recyclesymbol2",
+"Recyclesymbol2",
+"Recyclesymbol2",
+"Recyclesymbol2",
+"Recyclesymbol2",
+"Recyclesymbol2",
 "none4",
 "none3",
 "Evacuationsitemark",
 "FSCmark",
-"ecomark",
+"ecomark2",
 "none5"  
     };
      string[] className2 = {
    
-"yunisehu",
+"yunisehu2",
 "rosunon",
-"foodforspecifiedhealthusesmark",
+"foodforspecifiedhealthusesmark2",
 "MUDmark",
 "rainbowflag",
 "drinkingwatermark",
@@ -167,8 +175,30 @@ public class MobileNet: MonoBehaviour
 "JASmark",
 "none4",
 "greenmark",
-"foodforspecifiedhealthusesmark",
+"foodforspecifiedhealthusesmark2",
 "none5"
+     };
+     string[] className3 = {
+ "Bellmark",
+ "Recyclesymbol",
+ "ecomark",
+ "none",
+ "none2",
+ "Recyclesymbol",
+ "Recyclesymbol",
+ "Recyclesymbol",
+ "Recyclesymbol",
+ "Recyclesymbol",
+ "Recyclesymbol",
+ "Recyclesymbol",
+ "none4",
+ "none3",
+ "ecomark",
+ "none5",
+ "yunisehu",
+ "foodforspecifiedhealthusesmark",
+ "greenmark3"
+
      };
 }
         
